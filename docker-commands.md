@@ -1,33 +1,37 @@
 # Comandos docker
 
-## Sintaxe geral dos comandos Docker:
+## **Mudança de syntax do docker**
+A partir da versão 1.13, o Docker passou a utilizar uma nova syntax para os comandos. 
+A syntax antiga ainda é válida, mas é recomendado o uso da nova syntax.
 
+Exemplo de mudança de syntax:
+- **Antiga**: `docker run -it <docker-image>`
+- **Nova**: `docker container run -it <docker-image>`
+
+Agora, os comandos são divididos em categorias:
+- `docker container`: Comandos relacionados a containers.
+- `docker image`: Comandos relacionados a imagens.
+- `docker network`: Comandos relacionados a redes.
+- `docker volume`: Comandos relacionados a volumes.
+
+Então, o comando `docker run` passa a ser `docker container run`.
+
+Ou seja, a nova syntax é:
 ```bash
-  docker <comando> <opções> <argumentos> <imagem>
+  docker <categoria> <comando> <opções> <argumentos-referente-a-categoria>
 ```
+
+
 
 ## **Comandos**
 
-### **ps**
-Lista os containers em execução.
-```bash
-    docker ps
-```
-
-ou 
-```bash
-  docker container ps
-```
-
-Pode ser combinado com as opções `-a`, `-q`, `-s`, `--no-trunc`, `--latest`. Ver em [Opções comuns](#opções).
-
 ### **ls**
+
+Lista os recursos em execução.
 
 ```bash
   docker container ls
 ```
-
-``docker container ls``: Lista os containers em execução.
 
 `docker container ls` é um alias para `docker container ps`.
 
