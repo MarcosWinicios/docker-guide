@@ -83,6 +83,12 @@ Para um container em execução.
   docker container stop <container-id>
 ```
 
+### **restart**
+Reinicia um container.
+```bash
+  docker container restart <container-id>
+```
+
 ### **rm**
 Remove um container.
 ```bash
@@ -93,6 +99,18 @@ Remove um container.
 Executa um comando em um container em execução.
 ```bash
   docker container exec <container-id> <comando>
+```
+
+### **logs**
+Exibe os logs de um container.
+```bash
+  docker container logs <container-id>
+```
+
+### **inspect**
+Exibe informações detalhadas sobre um container.
+```bash
+  docker container inspect <container-id>
 ```
 
 ## **Opções comuns**
@@ -122,11 +140,15 @@ Executa um comando em um container em execução.
   docker container run -t <container-id>
 ```
 
-- `-it`: Modo interativo e terminal.
+- `-it`: Modo interativo e terminal. Usa-se junto com o comando `run`.
 ```bash
   docker container run -it <container-id>
 ```
 
+- `-ai`: Modo interativo e acesso ao terminal. Usa-se junto com o comando `start`.
+```bash
+  docker container run -ai <container-id>
+```
 
 - `-f` | `--force`: Força a execução do comando.
 ```bash
@@ -163,7 +185,7 @@ Executa um comando em um container em execução.
   docker container ls -q
 ```
 
-- `-d` | `--detach`: Modo detached.
+- `-d` | `--detach`: Modo detached. Executa o container em segundo plano.
 ```bash
   docker container run -d <container-id>
 ```
@@ -172,3 +194,4 @@ Executa um comando em um container em execução.
 ```bash
   docker container run --name <nome> <container-id>
 ```
+
