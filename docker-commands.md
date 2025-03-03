@@ -107,6 +107,11 @@ Executa um comando em um container em execução.
     -p <porta-host>:<porta-container>
 ```
 
+- `-v` | `--volume`: Mapeia um volume.
+```bash
+  -v <caminho-diretorio-host>:<caminho-diretorio-container>
+```
+
 - `-i` | `--interactive`: Modo interativo.
 ```bash
   docker container run -i <container-id>

@@ -41,3 +41,9 @@ sintaxe: `-p <porta-host>:<porta-container>`
 ```
 
 - **Volumes**: Volumes permitem compartilhar arquivos entre a máquina host e o container. Isso é útil para persistir dados ou compartilhar arquivos de configuração.
+
+Sintaxe: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
+
+```bash
+  docker container run -v $(pwd)/path/to/host:/path/to/container nginx
+```
