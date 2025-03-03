@@ -10,6 +10,9 @@ Uma imagem é um pacote de software que contém tudo o que é necessário para e
 ### **Container**
 Um container é uma instância de uma imagem em execução. Containers são isolados uns dos outros e da máquina hospedeira, o que garante que a aplicação rode de forma consistente em diferentes ambientes.
 
+### **Volume**
+Volumes são mecanismos de persistência de dados que permitem compartilhar arquivos entre o host e o container. Volumes são usados para armazenar dados que precisam sobreviver ao ciclo de vida do container.
+
 ### **Dockerfile**
 Um Dockerfile é um arquivo de configuração que contém instruções para a criação de uma imagem. Ele define o ambiente de execução da aplicação, incluindo as dependências necessárias, comandos de inicialização, variáveis de ambiente, entre outros.
 
@@ -23,37 +26,3 @@ O modo interativo permite interagir com o container através do terminal. Para a
 ### **Máquina host**
 Máquina host é o computador físico ou virtual que executa o Docker. É a máquina onde os containers são criados e executados.
 
-## Estratégias de uso
-
-### **Reutilização de containers**
-Uma das principais vantagens do Docker é a reutilização de containers. Em vez de criar um novo container para cada execução da aplicação, é possível reutilizar o mesmo container várias vezes. Isso reduz o tempo de inicialização e o consumo de recursos.
-
-Para reutilizar um container, basta utilizar o comando [**start**](docker-commands.md#start) em vez de [**run**](docker-commands.md#run).:
-
-### **Acessar o terninal do container**
-Para acessar o terminal de um container em execução, basta utilizar o comando [**exec**](docker-commands.md#exec) com a opção `-it`. Isso permite interagir com o container como se fosse um terminal local.
-
-Sintaxe: `docker container exec -it <container-id> bash`
-
-```bash
-  docker container exec -it 1234567890 bash
-```
-
-
-### Integrações entre a máquina host e o container
-
-- **Portas**: É possível mapear portas da máquina host para o container, permitindo que a aplicação seja acessível externamente.
-
-sintaxe: `-p <porta-host>:<porta-container>`
-
-```bash
-  docker container run -p 8080:80 nginx
-```
-
-- **Volumes**: Volumes permitem compartilhar arquivos entre a máquina host e o container. Isso é útil para persistir dados ou compartilhar arquivos de configuração.
-
-Sintaxe: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
-
-```bash
-  docker container run -v $(pwd)/path/to/host:/path/to/container nginx
-```
