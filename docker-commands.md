@@ -63,9 +63,16 @@ Pode ser combinado com as opções `-i`, `-t`, `-it`, `-rm`, `-p`, `-d`, `--name
 Baixa uma imagem do registry para a máquina local.
 
 ```bash
-  docker image pull <docker-image>
+  docker image pull <docker-image>:<version>
 ```
 
+### **tag**
+Cria uma tag para uma imagem. As tags são utilizadas para identificar versões de uma imagem.
+São como um ponteiro para uma imagem.
+
+```bash
+  docker image tag <docker-image>:<version> <docker-image-tag>:<nova-versao>
+```
 
 ### **create**
 Cria um container a partir de uma imagem.
@@ -198,4 +205,3 @@ Exibe informações detalhadas sobre um container.
 ```bash
   docker container run --name <nome> <container-id>
 ```
-
