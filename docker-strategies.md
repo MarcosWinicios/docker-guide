@@ -8,7 +8,7 @@ Para reutilizar um container, basta utilizar o comando [**start**](docker-comman
 ## **Acessar o terninal do container**
 Para acessar o terminal de um container em execução, basta utilizar o comando [**exec**](docker-commands.md#exec) com a opção `-it`. Isso permite interagir com o container como se fosse um terminal local.
 
-Sintaxe: `docker container exec -it <container-id> bash`
+Syntax: `docker container exec -it <container-id> bash`
 
 ```bash
   docker container exec -it 1234567890 bash
@@ -41,7 +41,7 @@ Para remover todos os containers, basta utilizar o comando [**rm**](docker-comma
 ### **Portas**: 
 É possível mapear portas da máquina host para o container, permitindo que a aplicação seja acessível externamente.
 
-sintaxe: `-p <porta-host>:<porta-container>`
+Syntax: `-p <porta-host>:<porta-container>`
 
 ```bash
   docker container run -p 8080:80 nginx
@@ -50,7 +50,7 @@ sintaxe: `-p <porta-host>:<porta-container>`
 ### **Volumes**: 
 Volumes permitem compartilhar arquivos entre a máquina host e o container. Isso é útil para persistir dados ou compartilhar arquivos de configuração.
 
-Sintaxe: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
+Syntax: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
 
 ```bash
   docker container run -v $(pwd)/path/to/host:/path/to/container nginx
