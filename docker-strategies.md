@@ -60,6 +60,45 @@ Exemplo, printando uma variável de ambiente do container:
   docker container run nginx bash -c 'echo $PATH'
 ```
 
+## **Listar labels de uma imagem**
+
+```bash
+  docker image inspect --format='{{json .Config.Labels}}' <nome-da-imagem>
+```
+
+ou
+
+```bash
+    docker image inspect ex-build-with-arg | grep Labels -A 5
+```
+
+## **Exibir o valor de uma label de uma imagem**
+
+```bash
+  docker image inspect --format='{{index .Config.Labels "label"}}' <nome-da-imagem>
+```
+
+## Listar apenas os logs de erro de um container
+
+```bash
+  docker container logs <container-id> 2>&1 | grep -i error
+```
+
+E caso queira listar apenas os logs de erro de um container em tempo real:
+
+```bash
+  docker container logs -f <container-id> 2>&1 | grep -i error
+```
+
+Para listar apenas os logs de erro de um container em tempo real e salvar em um arquivo:
+
+```bash
+  docker container logs -f <container-id> 2>&1 | grep -i error > errors.log
+```
+
+
+
+
 ## **Integrações entre a máquina host e o container**
 
 ### **Portas**: 
