@@ -57,6 +57,16 @@ O comando ``docker container run`` concatena os seguintes comandos:
 
 Pode ser combinado com as opções `-i`, `-t`, `-it`, `-rm`, `-p`, `-d`, `--name`. Ver em [Opções comuns](#opções).
 
+É possível passar um comando para ser executo no container, ao invés de iniciar o container e executar o comando manualmente.
+
+```bash
+  docker container run <container-id> <comando>
+```
+Exemplo:
+```bash
+  docker container run 1234567890 ls
+```
+
 
 ### **pull**
 
@@ -138,6 +148,11 @@ Constrói uma imagem a partir de um Dockerfile.
   docker image build -t <docker-image>:<version> <caminho-dockerfile>
 ```
 
+- Ao construir uma imagem, o Docker cria uma nova camada para cada instrução no Dockerfile.
+- É recomendável manter as instruções que mudam com frequência no final do Dockerfile, para aproveitar o cache das camadas anteriores.
+- O cache é utilizado para evitar a reconstrução de camadas que não foram alteradas.
+- Para forçar a reconstrução de todas as camadas, utilize a opção `--no-cache`.
+- É possível passar variáveis de ambiente para o Dockerfile com a opção `--build-arg`.
 
 ## **Opções comuns**
 
