@@ -66,6 +66,14 @@ Baixa uma imagem do registry para a máquina local.
   docker image pull <docker-image>:<version>
 ```
 
+### **push**
+
+Envia uma imagem para o registry.
+
+```bash
+  docker image push <docker-image>:<version>
+```
+
 ### **tag**
 Cria uma tag para uma imagem. As tags são utilizadas para identificar versões de uma imagem.
 São como um ponteiro para uma imagem.
