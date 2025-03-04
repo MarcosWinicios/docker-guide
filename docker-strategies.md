@@ -36,6 +36,30 @@ Para remover todos os containers, basta utilizar o comando [**rm**](docker-comma
   docker container ls -a --filter ancestor=<nome-da-imagem>
 ```
 
+## **Executar comandos ao iniciar o container**
+
+É possível executar comandos ao iniciar o container com o comando **run**. Isso é útil para configurar o ambiente do container antes de iniciar a aplicação.
+
+Syntax: `docker container run <imagem> <comando>`
+
+```bash
+  docker container run nginx ls
+```
+
+Para executar um shell interativo, basta passar o comando `bash`.
+
+```bash
+  docker container run -it nginx bash
+```
+
+É possível combinar o `bash` com o `-c` para executar comandos diretamente no shell do container sem abrir um shell interativo.
+
+Exemplo, printando uma variável de ambiente do container:
+
+```bash
+  docker container run nginx bash -c 'echo $PATH'
+```
+
 ## **Integrações entre a máquina host e o container**
 
 ### **Portas**: 
