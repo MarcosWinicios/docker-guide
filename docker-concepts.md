@@ -33,3 +33,16 @@ Docker Hub é um serviço de registro de imagens Docker mantido pela Docker, Inc
 
 ### **Imagens oficiais**
 Imagens oficiais são imagens Docker mantidas e suportadas pela comunidade Docker. Elas são verificadas e atualizadas regularmente para garantir a segurança e a qualidade.
+
+### **Imagens pendentes**
+Imagens pendentes são imagens Docker que estão sendo baixadas ou construídas. Elas são exibidas no Docker CLI com o status `<pending>`. O tempo de download ou construção depende do tamanho da imagem e da velocidade da conexão.
+
+Este é um exemplo de imagem pendente:
+```bash
+    REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
+    <none>              <none>    1234567890ab   1 minute ago   <pending>
+```
+
+Para remover imagens pendentes, basta executar o comando `docker image prune`.
+
+**Atenção:** Este comando irá remover todas as imagens pendentes, incluindo as que estão sendo baixadas no momento.
