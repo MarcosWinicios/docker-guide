@@ -22,7 +22,14 @@ Docker Compose é uma ferramenta que permite definir e executar aplicações mul
 ### **Modo interativo**
 O modo interativo permite interagir com o container através do terminal. Para ativar o modo interativo, basta utilizar a opção `-i` no comando `docker container run`.
 
-
 ### **Máquina host**
 Máquina host é o computador físico ou virtual que executa o Docker. É a máquina onde os containers são criados e executados.
 
+### ***Registry***
+Registry é um serviço que armazena e distribui imagens Docker. O Docker Hub é o registry público padrão, mas é possível configurar registries privados para armazenar imagens internas.
+
+### **Docker hub**
+Docker Hub é um serviço de registro de imagens Docker mantido pela Docker, Inc. Ele permite que desenvolvedores compartilhem e distribuam imagens Docker publicamente.
+
+### **Imagens oficiais**
+Imagens oficiais são imagens Docker mantidas e suportadas pela comunidade Docker. Elas são verificadas e atualizadas regularmente para garantir a segurança e a qualidade.
