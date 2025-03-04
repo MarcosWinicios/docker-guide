@@ -132,6 +132,13 @@ Exibe informações detalhadas sobre um container.
   docker container inspect <container-id>
 ```
 
+### **build**
+Constrói uma imagem a partir de um Dockerfile.
+```bash
+  docker image build -t <docker-image>:<version> <caminho-dockerfile>
+```
+
+
 ## **Opções comuns**
 
 - `-h` | `--help`: Exibe a ajuda do comando.
