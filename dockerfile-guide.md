@@ -66,3 +66,38 @@ A instrução `WORKDIR` define o diretório de trabalho para os comandos `RUN`, 
 ```Dockerfile
 WORKDIR /path/to/directory
 ```
+
+### LABEL
+
+A instrução `LABEL` é usada para adicionar metadados à imagem.
+
+```Dockerfile
+LABEL key="value"
+```
+
+### ARG
+
+A instrução `ARG` é usada para definir variáveis de ambiente que podem ser usadas durante a construção da imagem.
+
+```Dockerfile
+ARG <variable>
+```
+
+### ENV
+
+A instrução `ENV` é usada para definir variáveis de ambiente no contêiner.
+
+```Dockerfile
+ENV key="value"
+```
+
+**Nota**: A diferença entre `ARG` e `ENV` é que `ARG` é usado durante a construção da imagem, enquanto `ENV` é usado durante a execução do contêiner.
+É possível combinar `ARG` e `ENV` para definir variáveis de ambiente que podem ser substituídas durante a construção da imagem.
+
+Exemplo:
+
+```Dockerfile
+ARG user
+ENV USER=${user}
+```
+
