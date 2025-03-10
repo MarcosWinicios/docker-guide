@@ -1,3 +1,5 @@
+[**Voltar ao README**](README.md)
+
 # Conceitos e extratégias de uso do Docker
 
 ## Conceitos
@@ -46,3 +48,5 @@ Este é um exemplo de imagem pendente:
 Para remover imagens pendentes, basta executar o comando `docker image prune`.
 
 **Atenção:** Este comando irá remover todas as imagens pendentes, incluindo as que estão sendo baixadas no momento.
+
+[**Voltar ao README**](README.md)
