@@ -118,3 +118,23 @@ Syntax: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
 ```bash
   docker container run -v $(pwd)/path/to/host:/path/to/container nginx
 ```
+
+## Subir imagem para o Docker Hub
+
+1- Logar no Docker Hub:
+
+```bash
+  docker login
+```
+
+2- Criar uma tag da imagem:
+
+```bash
+  docker tag <nome-da-imagem> <seu-usuario-no-docker-hub>/<nome-da-imagem>
+```
+
+3- Subir a imagem para o Docker Hub:
+
+```bash
+  docker push <seu-usuario-no-docker-hub>/<nome-da-imagem>
+```
