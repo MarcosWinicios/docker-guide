@@ -18,7 +18,7 @@ O Docker suporta diferentes tipos de redes, cada um com suas características e 
 
 - **None**: O container não possui acesso à rede externa. Ele é isolado e não pode se comunicar com outros containers ou com a máquina host.
 
-<img src="./resources/none-network.png" alt="None" width="400"/>
+<img src="./resources/none-network.png" alt="None" width="500"/>
 
 - **Overlay**: Rede que conecta containers em diferentes hosts. É usada em ambientes distribuídos, como clusters de Docker Swarm.
 
