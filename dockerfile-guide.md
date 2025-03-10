@@ -23,6 +23,22 @@ A instrução `RUN` é usada para instalar pacotes, configurar o ambiente, baixa
 RUN <command>
 ```
 
+**Nota:** É recomendável combinar várias instruções `RUN` em uma única instrução para reduzir o número de camadas na imagem.
+Para isso é possível usar o operador `&&` para concatenar os comandos.
+
+Exemplo:
+
+```Dockerfile
+RUN apt-get update && apt-get install -y package
+```
+
+Com quebra de linha:
+
+```Dockerfile
+RUN apt-get update && \
+    apt-get install -y package
+```
+
 ### CMD
 
 A instrução `CMD` é usada para especificar o comando padrão que será executado quando o contêiner for iniciado.
