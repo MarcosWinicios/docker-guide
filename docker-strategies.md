@@ -72,6 +72,18 @@ ou
     docker image inspect ex-build-with-arg | grep Labels -A 5
 ```
 
+## **Criar container reaproveitando os volumes de um container existente**
+
+```bash
+  docker run --volumes-from=<container-id ou container-name> -d <nome-da-imagem>
+```
+**Exemplo:** Ler arquivo de log de um container existente
+
+```bash
+  docker run -it --volumes-from=python-server debian cat /log/http-server.log
+```
+
+
 ## **Exibir o valor de uma label de uma imagem**
 
 ```bash
@@ -119,21 +131,21 @@ Syntax: `-v <caminho-diretorio-host>:<caminho-diretorio-container>`
   docker container run -v $(pwd)/path/to/host:/path/to/container nginx
 ```
 
-## Subir imagem para o Docker Hub
+## **Subir imagem para o Docker Hub**
 
-1- Logar no Docker Hub:
+**1 -** Logar no Docker Hub:
 
 ```bash
   docker login
 ```
 
-2- Criar uma tag da imagem:
+**2 -** Criar uma tag da imagem:
 
 ```bash
   docker tag <nome-da-imagem> <seu-usuario-no-docker-hub>/<nome-da-imagem>
 ```
 
-3- Subir a imagem para o Docker Hub:
+**3 -** Subir a imagem para o Docker Hub:
 
 ```bash
   docker push <seu-usuario-no-docker-hub>/<nome-da-imagem>
