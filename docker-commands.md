@@ -235,3 +235,9 @@ Constrói uma imagem a partir de um Dockerfile.
 ```bash
   docker container run --name <nome> <container-id>
 ```
+
+- `--net`: Define a rede do container.
+```bash
+  docker container run --net <nome-rede> <container-id>
+```
+opções: `bridge`, `host`, `none`.
