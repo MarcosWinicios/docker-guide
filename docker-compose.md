@@ -35,6 +35,14 @@ Docker compose é uma ferramenta para definir e executar aplicativos Docker mult
 
 - **`docker compose up`**: Cria e inicia os containers. Deve ser executado na pasta onde está o arquivo docker-compose.yml.
 - **`docker compose down`**: Para e remove os containers.
+- **`docker compose start`**: Inicia os containers.
+- **`docker compose stop`**: Para os containers.
 - **`docker compose ps`**: Lista os containers.
 - **`docker compose logs`**: Exibe os logs dos containers.
+  - `-f`: Exibe os logs em tempo real.
+  - `-t`: Exibe o timestamp.
+```bash
+  docker compose logs -f -t
+```
+- **`docker compose top`**: Exibe os processos rodando nos containers.
 - **`docker compose exec`**: Executa um comando dentro de um container.
