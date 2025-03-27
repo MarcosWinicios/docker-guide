@@ -12,3 +12,9 @@ services:
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
+  frontend:
+    image: nginx:1.13
+    ports:
+      - "80:80"
+    volumes:
+      - ./web:/usr/share/nginx/html
