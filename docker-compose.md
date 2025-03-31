@@ -29,11 +29,30 @@ Docker compose é uma ferramenta para definir e executar aplicativos Docker mult
       - **Volumes anônimos(Bind Mount):** `{host_path}:{container_path}`: Mapeia um diretório do host para o container.
         - Não são gerenciados pelo Docker, não são acessíveis pelo comando `docker volume`.
         - Ideal apenas para arquivos de configuração ou scripts.
-    - **Cop**
+    - working_dir: Define o diretório de trabalho do container. Equivalente ao comando `docker run -w`.
+    - depends_on: Define a ordem de inicialização dos serviços. O serviço dependente só será iniciado após o serviço de que depende.
+    - build: Define o caminho do Dockerfile para construir a imagem do serviço.
+# Docker composer override
+O Docker Compose permite que você use vários arquivos de configuração para definir seus serviços. Isso é útil para criar diferentes ambientes (desenvolvimento, teste, produção) com base na mesma configuração.
+
+Uma possibilidade é usar o arquivo `docker-compose.override.yml`. Esse arquivo é carregado automaticamente pelo Docker Compose e pode ser usado para substituir ou adicionar configurações ao arquivo principal `docker-compose.yml`.
 
 # Comandos
 
 - **`docker compose up`**: Cria e inicia os containers. Deve ser executado na pasta onde está o arquivo docker-compose.yml.
+    - **`-d`**: Executa os containers em segundo plano (detached mode).
+    - **`--build`**: Força a reconstrução das imagens.
+    - **`--force-recreate`**: Força a recriação dos containers, mesmo que não haja alterações.
+    - **`--remove-orphans`**: Remove containers que não estão definidos no arquivo docker-compose.yml.
+    - **`--scale`**: Escala um serviço para o número de instâncias desejadas.
+    - **`--no-deps`**: Não inicia os serviços dependentes.
+    - **`--no-recreate`**: Não recria os containers, mesmo que haja alterações.
+    - **`--abort-on-container-exit`**: Para todos os containers se um deles parar.
+    - **`--timeout`**: Define o tempo limite para parar os containers.
+
+```bash
+  docker compose up -d --scale web=3
+```
 - **`docker compose down`**: Para e remove os containers.
 - **`docker compose start`**: Inicia os containers.
 - **`docker compose stop`**: Para os containers.
@@ -41,8 +60,27 @@ Docker compose é uma ferramenta para definir e executar aplicativos Docker mult
 - **`docker compose logs`**: Exibe os logs dos containers.
   - `-f`: Exibe os logs em tempo real.
   - `-t`: Exibe o timestamp.
+  - **Obs.:** Se não for passado o nome do serviço, exibe os logs de todos os serviços.
 ```bash
   docker compose logs -f -t
 ```
 - **`docker compose top`**: Exibe os processos rodando nos containers.
 - **`docker compose exec`**: Executa um comando dentro de um container.
+
+## Configurando serviço de imagem personalizada
+
+Serviços de imagem personalizadas, são serviços que utilizam um Dockerfile para criar a imagem do serviço. Para isso, é necessário adicionar a propriedade `build` no serviço desejado.
+
+```yaml
+  worker:
+    build: worker
+    volumes:
+      # Worker
+      - ./worker:/worker
+    working_dir: /worker
+    command: worker.py
+    networks:
+      - fila
+    depends_on:
+      - queue
+```

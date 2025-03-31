@@ -244,4 +244,9 @@ Constrói uma imagem a partir de um Dockerfile.
 ```
 opções: `bridge`, `host`, `none`.
 
+- '--scale': Define o número de instâncias do container."
+```bash
+  docker container run --scale <container-id>=<n>
+```
+
 [**Voltar ao README**](README.md)
