@@ -32,6 +32,13 @@ Para remover todos os containers, basta utilizar o comando [**rm**](docker-comma
   docker container rm -f $(docker container ls -aq)
 ```
 
+## **Remover todos os volumes**
+Para remover todos os volumes, basta utilizar o comando [**volume rm**](docker-commands.md#volume-rm) com a opção `-f`.
+
+```bash
+  docker volume rm -f $(docker volume ls -q)
+```
+
 ## **Listar containers de uma imagem**
 
 ```bash
