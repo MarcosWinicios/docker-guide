@@ -18,3 +18,12 @@ services:
       - "80:80"
     volumes:
       - ./web:/usr/share/nginx/html
+  app:
+    image: python:3.6
+    volumes:
+      # Aplicação
+      - ./app:/app
+    working_dir: /app
+    command: bash ./app.sh
+    ports:
+      - 8080:8080
