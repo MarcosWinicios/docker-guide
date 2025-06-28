@@ -38,6 +38,28 @@ Para remover todos os volumes, basta utilizar o comando [**volume rm**](docker-c
 ```bash
   docker volume rm -f $(docker volume ls -q)
 ```
+ou
+
+```bash
+  docker volume ls -q | xargs -r docker volume rm
+```
+
+## **Remover todas as imagens**
+Para remover todas as imagens, basta utilizar o comando [**image rm**](docker-commands.md#image-rm) com a opção `-f`.
+
+```bash
+  docker image rm -f $(docker image ls -q)
+```
+ou 
+
+```bash
+  docker rmi -f $(docker image ls -q)
+```
+ou
+
+```bash
+  docker images -q | xargs -r docker rmi -f
+```
 
 ## **Listar containers de uma imagem**
 
