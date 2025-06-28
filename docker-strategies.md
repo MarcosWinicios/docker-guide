@@ -7,7 +7,7 @@ Uma das principais vantagens do Docker é a reutilização de containers. Em vez
 
 Para reutilizar um container, basta utilizar o comando [**start**](docker-commands.md#start) em vez de [**run**](docker-commands.md#run).:
 
-## **Acessar o terninal do container**
+## **Acessar o terminal do container**
 Para acessar o terminal de um container em execução, basta utilizar o comando [**exec**](docker-commands.md#exec) com a opção `-it`. Isso permite interagir com o container como se fosse um terminal local.
 
 Syntax: `docker container exec -it <container-id> bash`
